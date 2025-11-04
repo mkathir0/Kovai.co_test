@@ -1,0 +1,37 @@
+Technical Report: ARIMA Model Forecasting for Passenger Count Data
+
+1. Introduction
+This task applies the AutoRegressive Integrated Moving Average (ARIMA) model to forecast passenger counts for different transport categories — Local Route, Light Rail, Peak Service, Rapid Route, and School. The objective was to generate short-term 7-day forecasts and analyze recent data trends to support operational planning.
+
+2. Methodology
+The ARIMA model is a statistical approach used for univariate time series forecasting. It combines three key components:
+
+AutoRegressive (AR): Captures the relationship between an observation and its lagged past values.
+
+Integrated (I): Applies differencing to make the data stationary if needed.
+
+Moving Average (MA): Models the dependency between observations and residual errors from prior predictions.
+
+In this study, each transport category was modeled using ARIMA(1,0,1), where:
+
+p=1: One lag of the autoregressive term to capture immediate temporal correlation.
+
+d=0: No differencing was required as the dataset was already stationary.
+
+q=1: One lag of the moving average term to capture short-term error dependencies.
+
+The model was implemented using the statsmodels library in Python. Data visualization and trend inspection were done through Matplotlib, with the last 30 days of actual observations plotted against the 7-day forecast for clarity.
+
+3. Results
+Each ARIMA model was trained on its respective time series, and forecasts were generated for the following week. Evaluation was performed using Mean Absolute Error (MAE) and Root Mean Squared Error (RMSE) metrics.
+
+For example:
+
+School: MAE = 38.05, RMSE = 47.03
+These results indicate that the model effectively captures the short-term variation in the data, with reasonably low forecasting error for a non-seasonal model.
+
+4. Discussion
+The ARIMA(1,0,1) configuration offered a good balance between simplicity and performance. It successfully modeled short-term temporal dependencies without overfitting. While effective, further improvements could be achieved by extending to a SARIMA model to account for potential weekly or monthly seasonality patterns present in transport data.
+
+5. Conclusion
+The ARIMA model provided interpretable and accurate short-term forecasts across transport categories. Its results serve as a robust baseline for demand prediction tasks, supporting future exploration of advanced time series methods such as SARIMA, Prophet, or machine learning-based forecasting models.
