@@ -30,8 +30,18 @@ For example:
 School: MAE = 38.05, RMSE = 47.03
 These results indicate that the model effectively captures the short-term variation in the data, with reasonably low forecasting error for a non-seasonal model.
 
-4. Discussion
+4.Key findings
+
+1.“Rapid Route” and “Local Route” show strong weekday patterns
+
+2.“School” category highly volatile with intermittent demand spikes
+
+3.“Light Rail” exhibits moderate fluctuations, ideal for linear modeling
+
+4.“Peak Service” displays consistent weekday peaks with low variance
+
+5. Discussion
 The ARIMA(1,0,1) configuration offered a good balance between simplicity and performance. It successfully modeled short-term temporal dependencies without overfitting. While effective, further improvements could be achieved by extending to a SARIMA model to account for potential weekly or monthly seasonality patterns present in transport data.
 
-5. Conclusion
+6. Conclusion
 The ARIMA model provided interpretable and accurate short-term forecasts across transport categories. Its results serve as a robust baseline for demand prediction tasks, supporting future exploration of advanced time series methods such as SARIMA, Prophet, or machine learning-based forecasting models.
