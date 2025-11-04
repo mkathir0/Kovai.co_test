@@ -1,4 +1,4 @@
-# 📈 Time Series Forecasting using ARIMA Model
+# Time Series Forecasting using ARIMA Model
 
 ## 1. Overview
 
